@@ -16,6 +16,7 @@ class Hand
     @dice.size.times do |i|
       @dice[i].roll
     end
+    sort_desc
   end
 
   def preset(values)
@@ -27,5 +28,9 @@ class Hand
 
   def sort_desc
     @dice.sort! { |d1, d2| d2.value <=> d1.value }
+  end
+
+  def size
+    @dice.size
   end
 end
