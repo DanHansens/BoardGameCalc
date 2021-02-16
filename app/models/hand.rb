@@ -22,7 +22,7 @@ class Hand
   def preset(values)
     raise 'The values sent must match the number of dice' unless values.size == @dice.size
 
-    @dice.size.times { |i| @dice[i].roll(values[i]) }
+    @dice.size.times { |i| @dice[i].value = values[i] }
     sort_desc
   end
 
